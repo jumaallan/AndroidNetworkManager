@@ -16,7 +16,7 @@ compile 'com.github.jumadeveloper:networkmanager:0.0.1'
 
 Sync Project, and start using the library instantly on your project.
 
-### Permissions
+## Permissions
 
 A step by step to set up Android Network Manager in your project.
 
@@ -34,7 +34,11 @@ If you are using this Library, this means your Application is using Internet, so
 
 That's it, you have set up the required permissions and ready to go!
 
-### Quick Example - Activity
+## Quick Example
+
+You can use it in both Android Activities and Fragments, as shown using the code snippets below. You can now replace the toasts with a call to make your HTTP Request now!
+
+### Activity
 
 When using in an Android Activity, use the following code snippet :
 
@@ -49,7 +53,7 @@ if (NetworkManager.getInstance(getApplicationContext()).isOnline()) {
         }
 ```
 
-### Quick Example - Fragments
+### Fragments
 
 When using in an Android Fragments, use the following code snippet :
 
