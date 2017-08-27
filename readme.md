@@ -6,7 +6,17 @@ A Simple Android library to check various types of network connections, to allow
 
 These instructions will help you set up this library easily on your current project and working in no time. You only need a few configurations to start working!
 
-### Installing
+## Installing
+
+To be able to use the following library, you will need to add the following gradle dependency in your build.gradle(module:app) file
+
+```
+compile 'com.github.jumadeveloper:networkmanager:0.0.1'
+```
+
+Sync Project, and start using the library instantly on your project.
+
+### Permissions
 
 A step by step to set up Android Network Manager in your project.
 
@@ -23,16 +33,6 @@ If you are using this Library, this means your Application is using Internet, so
 ```
 
 That's it, you have set up the required permissions and ready to go!
-
-## Add gradle dependency
-
-To be able to use the following library, you will need to add the following gradle dependency in your build.gradle(module:app) file
-
-```
-compile 'com.github.jumadeveloper:networkmanager:0.0.1'
-```
-
-Sync Project, and start using the library instantly on your project.
 
 ### Quick Example - Activity
 
@@ -70,11 +70,11 @@ Please feel free to contribute or open issues, if any and I will be happy to hel
 
 ## Authors
 
-* **Juma Allan - Android Developer
+* **Juma Allan** - Android Developer, [Muva Technologies Ltd](http://muva.co.ke)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
 
 ## Acknowledgments
 
