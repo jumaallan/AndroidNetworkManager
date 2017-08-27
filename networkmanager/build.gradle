@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
 publish {
-    userOrg = 'androidstudy'
+
     groupId = 'com.github.jumadeveloper'
     artifactId = 'networkmanager'
     publishVersion = '0.0.1'
     desc = 'A library to check various types of network connections, to allow an app check internet connectivity status before making HTTP Requests.'
     licences = ['Apache-2.0']
-    repoName = 'networkmanager'
+    repoName = 'network-manager'
     website = 'https://github.com/jumadeveloper/AndroidNetworkManager'
 }
 
