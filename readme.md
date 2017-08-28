@@ -16,6 +16,18 @@ compile 'com.github.jumadeveloper:networkmanager:0.0.1'
 
 Sync Project, and start using the library instantly on your project.
 
+If you are using Maven, add it using :
+
+```
+<dependency>
+  <groupId>com.github.jumadeveloper</groupId>
+  <artifactId>networkmanager</artifactId>
+  <version>0.0.1</version>
+  <type>pom</type>
+</dependency>
+```
+That is the basic set up needed to be able to use the library in your applications!
+
 ## Permissions
 
 A step by step to set up Android Network Manager in your project.
