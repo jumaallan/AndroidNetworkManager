@@ -1,5 +1,7 @@
 # Android Network Manager
 
+![Androd Network Manager](https://i0.wp.com/androidstudy.com/wp-content/uploads/2017/04/Website-Android-Development-Banner.jpg?resize=750%2C410)
+
 A Simple Android library to check various types of network connections, to allow an app check internet connectivity status before making HTTP Requests.
 
 ## Getting Started
