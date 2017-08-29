@@ -99,6 +99,8 @@ public class NetworkManager {
      * @param type
      * @param subType
      * @return boolean
+     *
+     * inspired by https://gist.github.com/emil2k/5130324
      */
     public static boolean isConnectionFast(int type, int subType) {
         if (type == ConnectivityManager.TYPE_WIFI) {
