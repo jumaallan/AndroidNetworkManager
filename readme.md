@@ -46,6 +46,8 @@ If you are using this Library, this means your Application is using Internet, so
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
+Also, for android M and above, you must request the runtime permission for `ACCESS_NETWORK_STATE`.
+
 That's it, you have set up the required permissions and ready to go!
 
 ## Quick Example
@@ -57,7 +59,7 @@ You can use it in both Android Activities and Fragments, as shown using the code
 When using in an Android Activity, use the following code snippet :
 
 ```
-if (NetworkManager.getInstance(getApplicationContext()).isOnline()) {
+if (NetworkManager.isConnected(this)) {
             /**
              * Internet is available
              */
@@ -72,7 +74,7 @@ if (NetworkManager.getInstance(getApplicationContext()).isOnline()) {
 When using in an Android Fragments, use the following code snippet :
 
 ```
-if (NetworkManager.getInstance(getActivity().getApplicationContext()).isOnline()) {
+if (NetworkManager.isConnected(getActivity())) {
             /**
              * Internet is available
              */
