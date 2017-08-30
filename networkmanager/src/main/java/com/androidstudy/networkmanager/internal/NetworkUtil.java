@@ -1,4 +1,4 @@
-package com.androidstudy.networkmanager;
+package com.androidstudy.networkmanager.internal;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -10,7 +10,7 @@ import android.util.Log;
  * Created by anonymous on 8/27/17.
  */
 
-public class NetworkManager {
+public class NetworkUtil {
 
     /**
      * A utility class to determine if the application has been connected to either WIFI Or Mobile
@@ -19,6 +19,9 @@ public class NetworkManager {
      * The class uses two permission - INTERNET and ACCESS NETWORK STATE, to determine the user's
      * connection stats
      */
+
+    private NetworkUtil() {
+    }
 
     /**
      * Get the network info
@@ -45,14 +48,25 @@ public class NetworkManager {
      */
     public static boolean isConnected(Context context) {
         NetworkInfo info = getNetworkInfo(context);
-        return (info != null && info.isConnected());
+        return (info != null && info.isConnectedOrConnecting());
+    }
+
+    public static boolean isConnected(Context context, int connectionType) {
+        switch (connectionType) {
+            case ConnectivityManager.TYPE_WIFI:
+                return isConnectedToWifi(context);
+            case ConnectivityManager.TYPE_MOBILE:
+                return isConnectedToMobile(context);
+            default:
+                return isConnected(context);
+        }
     }
 
     /**
      * @param context
      * @return boolean
      * <p>
-     * Instead use {@link NetworkManager#isConnected(Context)}
+     * Instead use {@link NetworkUtil#isConnected(Context)}
      */
     @Deprecated
     public static boolean isOnline(Context context) {
@@ -99,7 +113,7 @@ public class NetworkManager {
      * @param type
      * @param subType
      * @return boolean
-     *
+     * <p>
      * inspired by https://gist.github.com/emil2k/5130324
      */
     public static boolean isConnectionFast(int type, int subType) {
