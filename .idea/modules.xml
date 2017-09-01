@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidNetworkManager.iml" filepath="$PROJECT_DIR$/AndroidNetworkManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidNetworkManager-OG.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidNetworkManager-OG.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/networkmanager/networkmanager.iml" filepath="$PROJECT_DIR$/networkmanager/networkmanager.iml" />
