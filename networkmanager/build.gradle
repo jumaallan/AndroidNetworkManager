@@ -5,7 +5,7 @@ publish {
 
     groupId = 'com.github.jumadeveloper'
     artifactId = 'networkmanager'
-    publishVersion = '0.0.1'
+    publishVersion = '0.0.2'
     desc = 'A library to check various types of network connections, to allow an app check internet connectivity status before making HTTP Requests.'
     licences = ['Apache-2.0']
     repoName = 'network-manager'
