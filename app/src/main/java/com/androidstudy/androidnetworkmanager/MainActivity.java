@@ -1,13 +1,13 @@
 package com.androidstudy.androidnetworkmanager;
 
 import android.databinding.DataBindingUtil;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Toast;
 
 import com.androidstudy.androidnetworkmanager.databinding.ActivityMainBinding;
-import com.androidstudy.networkmanager.NetworkManager;
+import com.androidstudy.networkmanager.Monitor;
+import com.androidstudy.networkmanager.Tovuti;
 
 import java.util.Locale;
 
@@ -19,42 +19,54 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        refreshNetworkStatus();
-        binding.buttonRefreshStatus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.refreshNetworkStatus();
-            }
-        });
+        Tovuti.from(this)
+                .monitor(new Monitor.ConnectivityListener() {
+                    @Override
+                    public void onConnectivityChanged(int connectionType, boolean isConnected, boolean isFast) {
+
+                        String type, speed;
+                        if (isConnected) {
+                            switch (connectionType) {
+                                case -1:
+                                    type = "Any";
+                                    break;
+                                case ConnectivityManager.TYPE_WIFI:
+                                    type = "Wifi";
+                                    break;
+                                case ConnectivityManager.TYPE_MOBILE:
+                                    type = "Mobile";
+                                    break;
+                                default:
+                                    type = "Unknown";
+                                    break;
+                            }
+
+                            if (isFast)
+                                speed = "Fast";
+                            else if (type.equals("Unknown"))
+                                speed = "N/A";
+                            else
+                                speed = "Slow";
+                        } else {
+                            type = "None";
+                            speed = "N/A";
+                        }
+
+                        binding.connectionStatus.setText(String.format(Locale.getDefault(), getString(R.string.connection_status), type));
+                        binding.connectionFast.setText(String.format(Locale.getDefault(), getString(R.string.connection_speed), speed));
+                    }
+                });
     }
 
-    private void refreshNetworkStatus() {
-        if (NetworkManager.isConnected(this)) {
-            //There is Internet connection
-            String type, speed;
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //Tovuti.from(this).start();
+    }
 
-            if (NetworkManager.isConnectedToWifi(this)) {
-                type = "Wifi";
-                speed = "Fast";
-            } else if (NetworkManager.isConnectedToMobile(this)) {
-                type = "Mobile";
-                if (NetworkManager.isConnectionFast(this))
-                    speed = "Fast";
-                else
-                    speed = "Slow";
-            } else {
-                type = "Unknown";
-                speed = "N/A";
-            }
-
-            binding.connectionStatus.setText(String.format(Locale.getDefault(), getString(R.string.connection_status), type));
-            binding.connectionFast.setText(String.format(Locale.getDefault(), getString(R.string.connection_speed), speed));
-            Toast.makeText(this, "Internet Connected", Toast.LENGTH_SHORT).show();
-        } else {
-            //There is NO Internet connection
-            binding.connectionStatus.setText(String.format(Locale.getDefault(), getString(R.string.connection_status), "None"));
-            binding.connectionFast.setText(String.format(Locale.getDefault(), getString(R.string.connection_speed), "N/A"));
-            Toast.makeText(this, "Not Internet Connection", Toast.LENGTH_SHORT).show();
-        }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Tovuti.from(this).stop();
     }
 }
