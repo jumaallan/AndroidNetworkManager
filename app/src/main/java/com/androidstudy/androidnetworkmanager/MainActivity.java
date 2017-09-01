@@ -13,13 +13,14 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
+    private Tovuti tovuti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        Tovuti.from(this)
+        tovuti = Tovuti.from(this)
                 .monitor(new Monitor.ConnectivityListener() {
                     @Override
                     public void onConnectivityChanged(int connectionType, boolean isConnected, boolean isFast) {
@@ -59,14 +60,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        //Tovuti.from(this).start();
-    }
-
-    @Override
     protected void onStop() {
         super.onStop();
-        Tovuti.from(this).stop();
+        tovuti.stop();
     }
 }

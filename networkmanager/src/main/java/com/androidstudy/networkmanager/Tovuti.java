@@ -37,16 +37,17 @@ public class Tovuti {
         return tovuti;
     }
 
-    public void monitor(int connectionType, Monitor.ConnectivityListener listener) {
+    public Tovuti monitor(int connectionType, Monitor.ConnectivityListener listener) {
         Context context = contextRef.get();
         if (context != null)
             monitors.add(new DefaultMonitorFactory().create(context, connectionType, listener));
 
         start();
+        return tovuti;
     }
 
-    public void monitor(Monitor.ConnectivityListener listener) {
-        monitor(-1, listener);
+    public Tovuti monitor(Monitor.ConnectivityListener listener) {
+        return monitor(-1, listener);
     }
 
     public void start() {
