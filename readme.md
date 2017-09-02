@@ -13,7 +13,7 @@ These instructions will help you set up this library easily on your current proj
 To be able to use the following library, you will need to add the following gradle dependency in your build.gradle(module:app) file
 
 ```
-compile 'com.github.jumadeveloper:networkmanager:0.0.1'
+compile 'com.github.jumadeveloper:networkmanager:0.0.2'
 ```
 
 Sync Project, and start using the library instantly on your project.
@@ -24,7 +24,7 @@ If you are using Maven, add it using :
 <dependency>
   <groupId>com.github.jumadeveloper</groupId>
   <artifactId>networkmanager</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <type>pom</type>
 </dependency>
 ```
@@ -53,35 +53,34 @@ That's it, you have set up the required permissions and ready to go!
 ## Quick Example
 
 You can use it in both Android Activities and Fragments, as shown using the code snippets below. You can now replace the toasts with a call to make your HTTP Request now!
-
-### Activity
-
-When using in an Android Activity, use the following code snippet :
-
 ```
-if (NetworkManager.isConnected(this)) {
-            /**
-             * Internet is available
-             */
-            Toast.makeText(this, "Mobile Networks | WiFi Connected!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Ooops! No Mobile Networks | WiFi Connected!", Toast.LENGTH_SHORT).show();
-        }
-```
+import com.androidstudy.networkmanager.Monitor;
+import com.androidstudy.networkmanager.Tovuti;
+...
 
-### Fragments
+public class MyActivity extends Activity {
+    private Tovuti tovuti;
 
-When using in an Android Fragments, use the following code snippet :
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(...);
 
-```
-if (NetworkManager.isConnected(getActivity())) {
-            /**
-             * Internet is available
-             */
-            Toast.makeText(getActivity(), "Mobile Networks | WiFi Connected!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getActivity(), "Ooops! No Mobile Networks | WiFi Connected!", Toast.LENGTH_SHORT).show();
-        }
+        tovuti = Tovuti.from(this)
+                .monitor(new Monitor.ConnectivityListener() {
+                    @Override
+                    public void onConnectivityChanged(int connectionType, boolean isConnected, boolean isFast) {
+                        ...
+                    }
+                });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        tovuti.stop();
+    }
+}
 ```
 
 ## Contributing and Issues
@@ -91,6 +90,7 @@ Please feel free to contribute or open issues, if any and I will be happy to hel
 ## Authors
 
 * **Juma Allan** - Android Developer, [Muva Technologies Ltd](http://muva.co.ke)
+* **Elvis Chweya** - Android developer
 
 ## License
 
@@ -99,3 +99,4 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 * Juma Allan
+* [Elvis Chweya](https://github.com/chweez)
