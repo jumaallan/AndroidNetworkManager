@@ -2,7 +2,9 @@
 
 A Simple Android library to check various types of network connections, to allow an app check internet connectivity status before making HTTP Requests.
 
-# THIS PROJECT WILL BE MOVED TO A NEW REPOSITORY
+# THIS PROJECT WILL BE MOVED TO A NEW REPOSITORY. I AM STOPPING SUPPORT FOR THIS REPO SOON!!!
+
+https://github.com/AndroidStudyOpenSource/tovuti
 
 ## Getting Started
 
