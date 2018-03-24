@@ -5,7 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidNetworkManager.iml" filepath="$PROJECT_DIR$/AndroidNetworkManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidNetworkManager-OG.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidNetworkManager-OG.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/networkmanager/networkmanager.iml" filepath="$PROJECT_DIR$/networkmanager/networkmanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/networkmanager/networkmanager.iml" filepath="$PROJECT_DIR$/networkmanager/networkmanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tovutiV1.iml" filepath="$PROJECT_DIR$/tovutiV1.iml" />
     </modules>
   </component>
 </project>

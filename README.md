@@ -15,7 +15,7 @@ These instructions will help you set up this library easily on your current proj
 To be able to use the following library, you will need to add the following gradle dependency in your build.gradle(module:app) file
 
 ```
-compile 'com.github.jumadeveloper:networkmanager:0.0.2'
+implementation 'com.github.jumadeveloper:networkmanager:0.0.2'
 ```
 
 Sync Project, and start using the library instantly on your project.
@@ -55,7 +55,7 @@ That's it, you have set up the required permissions and ready to go!
 ## Quick Example
 
 You can use it in both Android Activities and Fragments, as shown using the code snippets below. You can now replace the toasts with a call to make your HTTP Request now!
-```
+```java
 import com.androidstudy.networkmanager.Monitor;
 import com.androidstudy.networkmanager.Tovuti;
 ...
@@ -91,14 +91,9 @@ Please feel free to contribute or open issues, if any and I will be happy to hel
 
 ## Authors
 
-* **Juma Allan** - Android Developer, [Muva Technologies Ltd](http://muva.co.ke)
-* **Elvis Chweya** - Android developer
+* **Juma Allan** - Android Engineer, [Twiga Foods](http://twigafoods.com)
+* [**Elvis Chweya**] - Android Developer (https://github.com/chweez)
 
 ## License
 
 This project is licensed under the MIT License.
-
-## Acknowledgments
-
-* Juma Allan
-* [Elvis Chweya](https://github.com/chweez)
