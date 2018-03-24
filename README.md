@@ -92,7 +92,7 @@ Please feel free to contribute or open issues, if any and I will be happy to hel
 ## Authors
 
 * **Juma Allan** - Android Engineer, [Twiga Foods](http://twigafoods.com)
-* [**Elvis Chweya**] - Android Developer (https://github.com/chweez)
+* **Elvis Chweya** - [Android Developer](https://github.com/chweez)
 
 ## License
 
