@@ -90,6 +90,7 @@ Please feel free to contribute or open issues, if any and I will be happy to hel
 
 * **Juma Allan** - Android Engineer, [Twiga Foods](http://twigafoods.com)
 * **Elvis Chweya** - [Android Developer](https://github.com/chweez)
+* **Ido Monzon** - [Web & Applications Developer](https://github.com/idomo)
 
 ## License
 
