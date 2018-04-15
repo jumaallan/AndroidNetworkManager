@@ -61,26 +61,23 @@ import com.androidstudy.networkmanager.Tovuti;
 ...
 
 public class MyActivity extends Activity {
-    private Tovuti tovuti;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(...);
 
-        tovuti = Tovuti.from(this)
-                .monitor(new Monitor.ConnectivityListener() {
-                    @Override
-                    public void onConnectivityChanged(int connectionType, boolean isConnected, boolean isFast) {
-                        ...
-                    }
-                });
+        Tovuti.from(this).monitor(new Monitor.ConnectivityListener(){
+          @Override
+          public void onConnectivityChanged(int connectionType, boolean isConnected, boolean isFast){
+            // TODO: Handle the connection...
+          }
+        });
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        tovuti.stop();
+    protected void onStop(){
+      Tovuti.from(this).stop();
+      super.onStop();
     }
 }
 ```
